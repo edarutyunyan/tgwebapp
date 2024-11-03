@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "edarutyunyan.github.io",
+  base: "edarutyunyan.github.io/tgwebapp",
   build: {
     outDir: "build"
   }
