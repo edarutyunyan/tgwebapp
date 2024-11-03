@@ -21,7 +21,7 @@ function App() {
       <div>{`Hello ${user?.last_name ?? 'stranger'}!`}</div>
       
       <div className={'content'}>
-        {['reebok', 'nike', 'adidas']
+        {['reebok', 'nike', 'adidas', 'puma']
           .map((brand) => Array(10).fill(brand).map((b, i) => b + (i + 1)))
           .flat()
           .map((brand, idx) => {
