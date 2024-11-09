@@ -17,7 +17,7 @@ function App() {
   }, []);
   return (
     <div className="App">
-      <div>{`Hello ${user?.last_name ?? 'stranger'}!`}</div>
+      <div>{`Hello ${[user?.first_name, user?.last_name].join(' ') || 'stranger'}!`}</div>
       {JSON.stringify(user)}
       
       <div className={'content'}>
