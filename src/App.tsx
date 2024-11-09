@@ -16,7 +16,6 @@ function App() {
   return (
     <div className="App">
       <div>{`Hello ${[user?.first_name, user?.last_name].join(' ')  || 'stranger'}!`}</div>
-      <div>start:{Telegram.WebApp.initData}</div>
 
       <div>uns start:{Telegram.WebApp.initDataUnsafe?.start_param}</div>
       
