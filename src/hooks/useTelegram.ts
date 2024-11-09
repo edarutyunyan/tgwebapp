@@ -1,20 +1,20 @@
 // import { TelegramWebApps } from "telegram-webapps-types";
 // ReturnType { tg: TelegramWebApps.WebApp, toggleButton: () => void, user: TelegramWebApps.WebAppUser }
 
-const tg = window.Telegram.WebApp;
+const { WebApp } = window.Telegram;
 export const useTelegram = () => {
 
-  const onClose = () => tg.close();
-  const toggleButton = () => tg.MainButton.isVisible ? tg.MainButton.hide() : tg.MainButton.show();
+  const onClose = () => WebApp.close();
+  const toggleButton = () => WebApp.MainButton.isVisible ? WebApp.MainButton.hide() : WebApp.MainButton.show();
 
   const sendData = (data: unknown) => {
-    tg.sendData(JSON.stringify({ dataFromWebApp: data }))
+    WebApp.sendData(JSON.stringify({ dataFromWebApp: data }))
   };
 
   return {
-    tg,
+    app: WebApp,
     toggleButton,
-    user: tg?.initDataUnsafe?.user,
+    user: WebApp?.initDataUnsafe?.user,
     sendData,
     onClose,
   }
