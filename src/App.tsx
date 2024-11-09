@@ -16,9 +16,9 @@ function App() {
   return (
     <div className="App">
       <div>{`Hello ${[user?.first_name, user?.last_name].join(' ')  || 'stranger'}!`}</div>
-      <div>start:{user.start_param}</div>
+      <div>start:{user?.start_param}</div>
 
-      <div>uns start:{Telegram.WebApp.initDataUnsafe.start_param}</div>
+      <div>uns start:{Telegram.WebApp.initDataUnsafe?.start_param}</div>
       
       <div className={'content'}>
         {['reebok', 'nike', 'adidas', 'puma']
