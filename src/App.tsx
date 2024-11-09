@@ -1,19 +1,14 @@
-import {useEffect, useState} from 'react';
+import {useEffect} from 'react';
 import { useTelegram } from "./hooks";
 
 function App() {
   const { app, user, toggleButton, sendData } = useTelegram();
-  const [timestamp, setTimeStamp] = useState(Date.now());
   
   useEffect(() => {
     app.ready();
     toggleButton();
     app.MainButton.onClick(() => sendData({ message: 'Main button was clicked!' }));
   }, [app, toggleButton]);
-  
-  useEffect(() => {
-    setTimeStamp(Date.now())
-  }, []);
   
   // useEffect(() => {
   //   fetch(BOT_SERVER_IP_ADDRESS, {method: 'GET'}).then(res => console.log(res));
