@@ -10,7 +10,7 @@ export const useTelegram = () => {
   const sendData = (data: unknown) => {
     WebApp.sendData(JSON.stringify({ dataFromWebApp: data }))
   };
-
+  
   return {
     app: WebApp,
     toggleButton,

@@ -21,7 +21,8 @@ function App() {
   return (
     <div className="App">
       <div>{`Hello ${[user?.first_name, user?.last_name].join(' ') || 'stranger'}!`}</div>
-      {timestamp}
+      {JSON.stringify(Telegram.WebApp.initData)}
+      {JSON.stringify(Telegram.WebApp.initDataUnsafe)}
       
       <div className={'content'}>
         {['reebok', 'nike', 'adidas', 'puma']
