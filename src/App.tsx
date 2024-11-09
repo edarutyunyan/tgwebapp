@@ -1,10 +1,9 @@
-import { useEffect } from 'react';
+import {useEffect, useState} from 'react';
 import { useTelegram } from "./hooks";
-
-const BOT_SERVER_IP_ADDRESS = 'http://217.18.62.216:4000/';
 
 function App() {
   const { app, user, toggleButton, sendData } = useTelegram();
+  const [timestamp, setTimeStamp] = useState(Date.now());
   
   useEffect(() => {
     app.ready();
@@ -13,12 +12,16 @@ function App() {
   }, [app, toggleButton]);
   
   useEffect(() => {
-    fetch(BOT_SERVER_IP_ADDRESS, {method: 'GET'}).then(res => console.log(res));
+    setTimeStamp(Date.now())
   }, []);
+  
+  // useEffect(() => {
+  //   fetch(BOT_SERVER_IP_ADDRESS, {method: 'GET'}).then(res => console.log(res));
+  // }, []);
   return (
     <div className="App">
       <div>{`Hello ${[user?.first_name, user?.last_name].join(' ') || 'stranger'}!`}</div>
-      <div className={'test'}>{JSON.stringify(user)}</div>
+      {timestamp}
       
       <div className={'content'}>
         {['reebok', 'nike', 'adidas', 'puma']
