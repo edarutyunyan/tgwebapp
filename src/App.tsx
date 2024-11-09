@@ -18,6 +18,7 @@ function App() {
   return (
     <div className="App">
       <div>{`Hello ${user?.last_name ?? 'stranger'}!`}</div>
+      {JSON.stringify(user)}
       
       <div className={'content'}>
         {['reebok', 'nike', 'adidas', 'puma']
