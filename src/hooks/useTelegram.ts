@@ -14,7 +14,7 @@ export const useTelegram = () => {
   return {
     app: WebApp,
     toggleButton,
-    user: WebApp?.initDataUnsafe?.user,
+    user: WebApp.initData.user,
     sendData,
     onClose,
   }
