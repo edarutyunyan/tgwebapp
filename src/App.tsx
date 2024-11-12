@@ -10,9 +10,9 @@ function App() {
     app.MainButton.onClick(() => sendData({ message: 'Main button was clicked!' }));
   }, [app, toggleButton]);
   
-  // useEffect(() => {
-  //   fetch(BOT_SERVER_IP_ADDRESS, {method: 'GET'}).then(res => console.log(res));
-  // }, []);
+  useEffect(() => {
+    sendData('hello from app')
+  }, []);
   return (
     <div className="App">
       <div>{`Hello ${[user?.first_name, user?.last_name].join(' ')  || 'stranger'}!`}</div>
